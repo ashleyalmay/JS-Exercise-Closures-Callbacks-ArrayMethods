@@ -66,7 +66,7 @@ function processLength(list, callback) {
  * should return 'barbar'.
  */
 function processLastItem(stringList, callback) {
-  return callback();
+  return callback(stringList.slice(-1)[0]);
 }
 
 /**
@@ -87,7 +87,9 @@ function processLastItem(stringList, callback) {
  * [2] Invoking `processSum` passing `-5`, '-1', and `(num) => num + 1000`,
  * should return 994.
  */
-function processSum(num1, num2, callback) {}
+function processSum(num1, num2, callback) {
+  return callback(num1 + num2);
+}
 
 /**
  * ### Challenge `processProduct`
@@ -107,8 +109,8 @@ function processSum(num1, num2, callback) {}
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
  */
-function processProduct(/* CODE HERE */) {
-  /* CODE HERE */
+function processProduct(num1, num2, callback) {
+  return callback(num1 * num2);
 }
 
 /**
@@ -151,8 +153,13 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  *
  * [2] Invoking `lowerCaseStrings` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
  */
-function lowerCaseStrings(/* code here */) {
-  /* code here */
+function lowerCaseStrings(strings) {
+  let lowerCase = [];
+
+  strings.forEach(function(x) {
+    lowerCase.push(x.toLowerCase());
+  });
+  return lowerCase;
 }
 
 /**
@@ -170,9 +177,7 @@ function lowerCaseStrings(/* code here */) {
  *
  * [2] Invoking `isItAnApple` with `['a', 'b', 'c' ]` will return `[ false, false, false ]`.
  */
-function isItAnApple(/* code here */) {
-  /* code here */
-}
+function isItAnApple(strings) {}
 
 /**
  * ### Challenge `removeApple`
@@ -247,7 +252,7 @@ function getFullNames(/* CODE HERE */) {
 function firstNamesAllCaps(/* CODE HERE */) {
   /* CODE HERE */
 }
-
+//done
 /**
  * ### Challenge `getRunnersByTShirtSize`
  * * THIS IS A STRETCH PROBLEM! ATTEMPT ONLY AFTER COMPLETING ALL NON-STRETCH CHALLENGES!
