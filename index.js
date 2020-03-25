@@ -177,7 +177,16 @@ function lowerCaseStrings(strings) {
  *
  * [2] Invoking `isItAnApple` with `['a', 'b', 'c' ]` will return `[ false, false, false ]`.
  */
-function isItAnApple(strings) {}
+function isItAnApple(strings) {
+  const s = strings.map(function(food) {
+    if (food == "apple") {
+      return true;
+    } else {
+      return false;
+    }
+  });
+  return s;
+}
 
 /**
  * ### Challenge `removeApple`
@@ -195,8 +204,11 @@ function isItAnApple(strings) {}
  *
  * [2] Invoking `removeApple` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
  */
-function removeApple(/* code here */) {
-  /* code here */
+function removeApple(strings) {
+  const result = strings.filter(function(food) {
+    return food !== "apple";
+  });
+  return result;
 }
 
 /**
@@ -214,8 +226,11 @@ function removeApple(/* code here */) {
  *
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
  */
-function stringSmash(/* code here */) {
-  /* code here */
+function stringSmash(strings) {
+  const d = strings.reduce(function(accumulator, f) {
+    return accumulator + f;
+  });
+  return d;
 }
 
 // A local community center is holding a fund raising 5k fun run and has invited
@@ -233,8 +248,11 @@ function stringSmash(/* code here */) {
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
  */
-function getFullNames(/* CODE HERE */) {
+function getFullNames(runners) {
   /* CODE HERE */
+  return runners.map(runner => {
+    return `${runner.last_name}, ${runner.first_name}`;
+  });
 }
 
 /**
@@ -249,8 +267,11 @@ function getFullNames(/* CODE HERE */) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
  */
-function firstNamesAllCaps(/* CODE HERE */) {
-  /* CODE HERE */
+function firstNamesAllCaps(runner) {
+  const s = runner.map(function(f) {
+    return f.first_name.toUpperCase();
+  });
+  return s;
 }
 //done
 /**
